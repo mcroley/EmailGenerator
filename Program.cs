@@ -7,10 +7,8 @@ namespace EmailGenerator
 {
     class Program
     {
-
-        // List to hold all of the emails:
+        // The List to hold all of the emails:
         static List<string> email = new List<string>();
-
         static void Main(string[] args)
         {
             for (int i = 0; i < 10000; i++)
@@ -28,8 +26,6 @@ namespace EmailGenerator
             List<char> randomGeneratedString = new List<char>();
             int randomNumberBetween3and36 = random.Next(3, 10);
 
-            randomGeneratedString.Clear(); // remove the email created from previous iterations
-            
             for (int i = 0; i < randomNumberBetween3and36; i++)
             {              
                  randomGeneratedString.Add(GetFirstPartofEmail());
@@ -42,18 +38,18 @@ namespace EmailGenerator
         }
         public static char GetFirstPartofEmail()
         {
-            string chars = "abcdefghijklmnopqrstuvwxyz1234567890..&-";
+            const string chars = "abcdefghijklmnopqrstuvwxyz1234567890.&-";
             Random rand = new Random();
             int num = rand.Next(0, chars.Length - 1);
             return chars[num];
         }
         public static string GetSecondPartofEmail()
         {
-            string[] secondpartEmail = { "@hotmail.com", "@outlook.com", "@gmail.com", "@msn.com", "@nbc.com" , "@aol.com",
+            string[] secondpartEmail = {"@hotmail.com", "@outlook.com", "@gmail.com", "@msn.com", "@nbc.com" , "@aol.com",
                 "@firstbank.com", "@fed.gov"};
+            
             Random randonSecond = new Random();
             return secondpartEmail[randonSecond.Next(0, secondpartEmail.Length - 1)];
         }
-    }
-        
+    }        
 }
