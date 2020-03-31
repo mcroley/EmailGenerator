@@ -46,7 +46,7 @@ namespace EmailGenerator
         public static string GetSecondPartofEmail()
         {
             string[] secondpartEmail = {"@hotmail.com", "@outlook.com", "@gmail.com", "@msn.com", "@nbc.com" , "@aol.com",
-                "@firstbank.com", "@fed.gov"};
+                "@firstbank.com", "@fed.gov", "@irs.gov"};
             
             Random randonSecond = new Random();
             return secondpartEmail[randonSecond.Next(0, secondpartEmail.Length - 1)];
